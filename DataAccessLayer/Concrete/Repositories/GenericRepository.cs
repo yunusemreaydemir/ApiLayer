@@ -19,27 +19,30 @@ namespace DataAccessLayer.Concrete.Repositories
         }
         public void Delete(T t)
         {
-            //
+            _context.Remove(t);
+            _context.SaveChanges();
         }
 
         public T GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().Find(id);
         }
 
         public List<T> Getlist()
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().ToList();
         }
 
         public void Insert(T t)
         {
-            throw new NotImplementedException();
+            _context.Add(t);
+            _context.SaveChanges();
         }
 
         public void Update(T t)
         {
-            throw new NotImplementedException();
+           _context.Update(t);
+            _context.SaveChanges();
         }
     }
 }
