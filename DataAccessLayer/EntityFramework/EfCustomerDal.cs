@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EfCustomerDal : GenericRepository<Customer>, ICustomerDal
+    public class EfCustomerDal : GenericRepository<Customer>, ICustomerDal
     {
         public EfCustomerDal(Context context) : base(context)
         {
